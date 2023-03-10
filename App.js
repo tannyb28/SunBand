@@ -4,12 +4,31 @@ import { StyleSheet, Text, View } from 'react-native';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import Account from './pages/Account';
 import Home from './pages/Home';
+import Notifications from './pages/Notifications';
 import Tracking from './pages/Tracking';
 import Settings from './pages/Settings';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 const bottomTab = createBottomTabNavigator();
+const settingsStack = createNativeStackNavigator();
+
+function SettingsStackScreen() {
+  return(
+    <settingsStack.Navigator
+      screenOptions={{
+        headerShown: false
+      }}
+    >
+      <settingsStack.Screen name="SettingsScreen" component={Settings} />
+      <settingsStack.Screen name="Account" component={Account} />
+      <settingsStack.Screen name="Notifications" component={Notifications} />
+      
+    </settingsStack.Navigator>
+  )
+}
 
 export default function App() {
   return (
@@ -39,7 +58,7 @@ export default function App() {
       >
         <bottomTab.Screen name="Home" component={Home} />
         <bottomTab.Screen name="Tracking" component={Tracking} />
-        <bottomTab.Screen name="Settings" component={Settings} />
+        <bottomTab.Screen name="Settings" component={SettingsStackScreen} />
       </bottomTab.Navigator>
     </NavigationContainer>
     
