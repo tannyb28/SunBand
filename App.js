@@ -4,11 +4,11 @@ import { StyleSheet, Text, View } from 'react-native';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Account from './pages/Account';
-import Home from './pages/Home';
-import Notifications from './pages/Notifications';
-import Tracking from './pages/Tracking';
-import Settings from './pages/Settings';
+import Account from './screens/Account';
+import Home from './screens/Home';
+import Notifications from './screens/Notifications';
+import Tracking from './screens/Tracking';
+import Settings from './screens/Settings';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
