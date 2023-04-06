@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { View, Text, StyleSheet, TextInput, TouchableOpacity, Button, KeyboardAvoidingView } from "react-native";
-import { login } from "./../actions/auth";
-const Login = ({ navigation }) => {
+import { signup } from "./../actions/auth";
+import BackButton from "../components/BackButton";
+const Signup = ({ navigation }) => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
-  const state = useSelector((state) => state);
   const dispatch = useDispatch();
-  const handleLogin = () => {
+  const handleSignup = () => {
     let user = {
       email: email,
       password: password
     };
-    dispatch(login(user))
+    dispatch(signup(user))
       .then((response) => {
         console.log(response)
         if (response.status == "success") {
@@ -26,6 +26,7 @@ const Login = ({ navigation }) => {
   
   return (
     <KeyboardAvoidingView style={styles.container} behavior="padding">
+      <BackButton navigation={navigation} />
       <View style={styles.inputContainer}>
         <TextInput
           placeholder="Email"
@@ -42,23 +43,18 @@ const Login = ({ navigation }) => {
         />
       </View>
       <View style={styles.buttonContainer}>
-        <TouchableOpacity
-          onPress={()=> handleLogin()}
-          style={styles.button}
-        >
-          <Text style={styles.buttonText}>Login</Text>
-        </TouchableOpacity>
+        
 
         <TouchableOpacity
-          style={[styles.button, styles.buttonOutline]}
+          style={[styles.button]}
         >
-          <Text style={styles.buttonOutlineText} onPress={()=>navigation.navigate("SignupScreen")}>Register</Text>
+          <Text style={styles.buttonText}>Register</Text>
         </TouchableOpacity>
       </View>
     </KeyboardAvoidingView>
   );
 };
-export default Login;
+export default Signup;
 
 
 const styles = StyleSheet.create({

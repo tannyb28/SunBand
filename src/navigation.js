@@ -11,6 +11,7 @@ import Tracking from "./screens/Tracking.js";
 import Settings from "./screens/Settings.js";
 import Account from "./screens/Device.js";
 import Notifications from "./screens/Notifications.js";
+import Signup from "./screens/Signup.js";
 
 const Stack = createNativeStackNavigator();
 const bottomTab = createBottomTabNavigator();
@@ -75,6 +76,11 @@ const AuthStack = (loggedIn) => (
       <Stack.Screen
         name="LoginScreen"
         component={Login}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="SignupScreen"
+        component={Signup}
         options={{ headerShown: false }}
       />
 

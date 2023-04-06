@@ -37,15 +37,30 @@ const logIn = async (user) => {
       uid: response.userCredentials.user.uid
     }
   } 
+};
 
-  // if (response.user) {
-  //   AsyncStorage.setItem("user", JSON.stringify(user));
-  //   return {
-  //     status: "success",
-  //     message: "You are redirecting to home page",
-  //     user: username,
-  //   };
-  // }
+const signUp = async (user) => {
+  const { email, password } = user;
+  const response = await auth
+    .createUserWithEmailAndPassword(email, password)
+    .then(userCredentials => {
+      const uid = userCredentials.user.uid;
+      console.log(uid)
+      AsyncStorage.setItem("user", JSON.stringify(user));
+      AsyncStorage.setItem("uid", JSON.stringify(uid));
+      return {
+        userCredentials
+      };
+    })
+    .catch(error => console.log(error.message));
+  if(response) {
+    return {
+      status: "success",
+      message: "You are redirecting to home page",
+      user: email,
+      uid: response.userCredentials.user.uid
+    }
+  }
 };
 
 const logOut = async () => {

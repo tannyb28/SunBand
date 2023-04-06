@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { View, Text, StyleSheet, Button } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "./../actions/auth";
@@ -24,6 +24,26 @@ const Home = ({ navigation }) => {
     dataRef.push({mood: sliderValue, date: date});
     console.log('pushed to database')
   };
+
+  const queryDatabase = () => {
+    const dataRef = db.ref("/users/" + state.uid)
+    dataRef.orderByChild("date").on("value", (snapshot) => {
+      const data = [];
+      snapshot.forEach((childSnapshot) => {
+        data.push({
+          id: childSnapshot.key,
+          ...childSnapshot.val()
+        });
+      });
+      // reverse the array to get the most recent entries first
+      const mostRecentData = data.reverse();
+      console.log(mostRecentData);
+    })
+  }
+  useEffect(() => {
+    queryDatabase();
+  }, [])
+
   
 return (
     <View style={Styles.container}>

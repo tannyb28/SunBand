@@ -1,4 +1,4 @@
-import { LOGIN_SUCCESS, LOGOUT } from "../actions/type";
+import { LOGIN_SUCCESS, LOGOUT, SIGNUP_SUCCESS } from "../actions/type";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 const user = AsyncStorage.getItem("user");
 const uid = AsyncStorage.getItem("uid");
@@ -15,12 +15,19 @@ switch (type) {
         user: payload.user,
         uid: payload.uid,
       };
-case LOGOUT:
+    case LOGOUT:
       return {
         ...state,
         isLoggedIn: false,
         user: null,
         uid: null,
+      };
+    case SIGNUP_SUCCESS:
+      return {
+        ...state,
+        isLoggedIn: true,
+        user: payload.user,
+        uid: payload.uid,
       };
     default:
       return state;
