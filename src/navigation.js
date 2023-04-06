@@ -13,6 +13,7 @@ import Account from "./screens/Device.js";
 import Notifications from "./screens/Notifications.js";
 import Signup from "./screens/Signup.js";
 
+// initialize stack navigators
 const Stack = createNativeStackNavigator();
 const bottomTab = createBottomTabNavigator();
 const settingsStack = createNativeStackNavigator();
@@ -35,6 +36,7 @@ function SettingsStackScreen() {
 function HomeStack() {
   return (
     <bottomTab.Navigator
+      // provides design for bottom tab navigators and their icons
       screenOptions={({ route }) => ({
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
@@ -57,6 +59,7 @@ function HomeStack() {
         headerShown: false,
       })}
     >
+      {/* These are the various screens that are within the root component */}
       <bottomTab.Screen name="Home" component={Home} />
       <bottomTab.Screen name="Tracking" component={Tracking} />
       <bottomTab.Screen name="Settings" component={SettingsStackScreen} />
