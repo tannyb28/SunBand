@@ -3,27 +3,34 @@ import { useDispatch, useSelector } from "react-redux";
 import { View, Text, StyleSheet, TextInput, TouchableOpacity, Button, KeyboardAvoidingView } from "react-native";
 import { login } from "./../actions/auth";
 const Login = ({ navigation }) => {
+  // initializes the state variables
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const state = useSelector((state) => state);
   const dispatch = useDispatch();
+
+  // handles the login
   const handleLogin = () => {
     let user = {
       email: email,
       password: password
     };
+    // dispatches the login action defined in src/actions/auth.js
     dispatch(login(user))
+      // if the login is successful, the user is redirected to the Home screen
       .then((response) => {
         console.log(response)
         if (response.status == "success") {
           navigation.navigate('Root', { screen: 'Home' });
         }
       })
+      // if the login fails, an alert is displayed
       .catch((error) => {
-        alert(error);
+        alert("The password is invalid or the user does not have a password.");
       });
   }
   
+  // renders the login screen
   return (
     <KeyboardAvoidingView style={styles.container} behavior="padding">
       <View style={styles.inputContainer}>
