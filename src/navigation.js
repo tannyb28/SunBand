@@ -9,7 +9,7 @@ import { useSelector } from "react-redux";
 import Ionicons from "react-native-vector-icons/Ionicons.js";
 import Tracking from "./screens/Tracking.js";
 import Settings from "./screens/Settings.js";
-import Account from "./screens/Device.js";
+import Device from "./screens/Device.js";
 import Notifications from "./screens/Notifications.js";
 import Signup from "./screens/Signup.js";
 
@@ -26,7 +26,7 @@ function SettingsStackScreen() {
       }}
     >
       <settingsStack.Screen name="SettingsScreen" component={Settings} />
-      <settingsStack.Screen name="Account" component={Account} />
+      <settingsStack.Screen name="Device" component={Device} />
       <settingsStack.Screen name="Notifications" component={Notifications} />
       
     </settingsStack.Navigator>
