@@ -4,8 +4,8 @@ import { View, Text, StyleSheet, TextInput, TouchableOpacity, Button, KeyboardAv
 import { login } from "./../actions/auth";
 const Login = ({ navigation }) => {
   // initializes the state variables
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
+  const [email, setEmail] = useState('tanishbhowmick@gmail.com');
+  const [password, setPassword] = useState('Eragon28$');
   const state = useSelector((state) => state);
   const dispatch = useDispatch();
 
@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
 
   },
   button: {
-    backgroundColor: 'teal',
+    backgroundColor: '#000b96',
     width: "100%",
     padding: 15,
     borderRadius: 10,
@@ -106,11 +106,11 @@ const styles = StyleSheet.create({
   buttonOutline: {
     backgroundColor: 'white',
     marginTop: 5,
-    borderColor: 'teal',
+    borderColor: '#000b96',
     borderWidth: 2,
   },
   buttonOutlineText: {
-    color: 'teal',
+    color: '#000b96',
     fontWeight: 'bold',
     fontSize: 17,
   },

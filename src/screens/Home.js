@@ -16,7 +16,7 @@ const Home = ({ navigation }) => {
   const [lightLevel, setLightLevel] = useState(100)
 
   // THIS IS THE MAGIC BUTTON TO TEMPORARILY CHANGE THE LIGHT LEVEL
-  const light=80;
+  const light=66;
 
   // this is sample data that we use to push to the user database
   const data ={
@@ -71,6 +71,7 @@ const Home = ({ navigation }) => {
       if (mostRecentData[0].date == date) {
         setSubmittedRating(true)
       }
+      console.log(submittedRating)
     })
   }
 
@@ -102,7 +103,7 @@ return (
       </View>
       <View style={Styles.slider}>
         {/* this ternary operator checks if the user has already submitted a rating for the day */}
-        {!submittedRating?
+        {submittedRating?
         (
           <>
             <Text>How was your day on a scale from 1-5?</Text>

@@ -54,7 +54,7 @@ function HomeStack() {
           // You can return any component that you like here!
           return <Ionicons name={iconName} size={size} color={color} />;
         },
-        tabBarActiveTintColor: 'teal',
+        tabBarActiveTintColor: '#000b96',
         tabBarInactiveTintColor: 'gray',
         headerShown: false,
       })}

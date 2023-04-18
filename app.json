@@ -7,7 +7,7 @@
     "icon": "./assets/sunband-logo.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/sunband-logo.png",
+      "image": "./assets/sunband-title.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -21,34 +21,9 @@
       "supportsTablet": true,
       "bundleIdentifier": "com.tannyb28.Sunband"
     },
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      },
-      "permissions": [
-        "android.permission.BLUETOOTH",
-        "android.permission.BLUETOOTH_ADMIN",
-        "android.permission.BLUETOOTH_CONNECT"
-      ],
-      "package": "com.tannyb28.Sunband"
-    },
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "plugins": [
-      [
-        "@config-plugins/react-native-ble-plx",
-        {
-          "isBackgroundEnabled": true,
-          "modes": [
-            "peripheral",
-            "central"
-          ],
-          "bluetoothAlwaysPermission": "Allow ${PRODUCT_NAME} to access this device's Bluetooth"
-        }
-      ]
-    ],
     "extra": {
       "eas": {
         "projectId": "73e40781-2a1a-4dc1-861e-90c24f9dc567"

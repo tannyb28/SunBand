@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
 
   },
   button: {
-    backgroundColor: 'teal',
+    backgroundColor: '#000b96',
     width: "100%",
     padding: 15,
     borderRadius: 10,
@@ -95,11 +95,11 @@ const styles = StyleSheet.create({
   buttonOutline: {
     backgroundColor: 'white',
     marginTop: 5,
-    borderColor: 'teal',
+    borderColor: '#000b96',
     borderWidth: 2,
   },
   buttonOutlineText: {
-    color: 'teal',
+    color: '#bcd3ff',
     fontWeight: 'bold',
     fontSize: 17,
   },
