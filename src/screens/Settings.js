@@ -103,13 +103,6 @@ const Settings = ({navigation}) => {
               <Ionicons name="ios-arrow-forward" size={20} color="black" />
             </View>
           </TouchableOpacity>
-
-          <View style={styles.listOption}>
-            <View style={styles.listOptionTitle}>
-              <Ionicons name="ios-bulb-outline" size={20} color="black" />
-              <Text style={styles.listOptionText}>Dark Mode</Text>
-            </View>
-          </View>
           
         </View>
       </View>

@@ -7,7 +7,7 @@ import BackButton from '../components/BackButton';
 const Device = ({navigation}) => {
   // const manager = new BLEManager();
   const [isScanning, setIsScanning] = useState(false);
-  const [connectedDevice, setConnectedDevice] = useState(false);
+  const [connectedDevice, setConnectedDevice] = useState('Om Sunband');
   const [isLoading, setIsLoading] = useState(false);
 
   // const startDeviceScanning = useCallback(() => {
@@ -103,7 +103,7 @@ const Device = ({navigation}) => {
     },
   ]
 
-  if(!isScanning) {
+  if(isScanning) {
     return (
       <SafeAreaView style={styles.container}>
         <View style={styles.headerContainer}>

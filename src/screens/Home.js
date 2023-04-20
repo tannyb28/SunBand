@@ -20,8 +20,8 @@ const Home = ({ navigation }) => {
 
   // this is sample data that we use to push to the user database
   const data ={
-    time: [13,14,15,16,17,18,19,20,21,22,23,24],
-    light: [7271,9530,4274,4669,9694,8939,5281,9635,5360,1967,2992,4756]
+    time: [7,8,9],
+    light: [5500, 7250, 4895]
   }
   // this iterates through the sample data to call function that pushes to the database
   const doIt = () => {
